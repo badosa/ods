@@ -10,18 +10,18 @@ title: Indicators For The Sustainable Development Goals
 # Replace the baseurl with the name of this repository. For example, if the repository is named
 # "my-site-repository", then update the baseurl like so:
 # baseurl: "/my-site-repository"
-baseurl: "/open-sdg-site-starter"
+baseurl: "/ods"
 url: ""
 data_dir: data
 environment: staging
 
 # In the next few items, replace "open-sdg" with the name of your GitHub
 # organization, and "open-sdg-data-starter" with the name of your data repository.
-remote_data_prefix: "https://open-sdg.github.io/open-sdg-data-starter"
+remote_data_prefix: "https://badosa.github.io/ods-data"
 # URL for the "Edit Data" button on indicators.
-data_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/data/indicator_[id].csv
+data_edit_url: http://prose.io/#badosa/ods-data/edit/develop/data/indicator_[id].csv
 # URL for the "Edit Metadata" button on indicators.
-metadata_edit_url: http://prose.io/#open-sdg/open-sdg-data-starter/edit/develop/meta/[id].md
+metadata_edit_url: http://prose.io/#badosa/ods-data/edit/develop/meta/[id].md
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -46,8 +46,8 @@ email_contacts:
 # International Support
 # Eg name: Australia and adjective: Australian
 country:
-  name: Australia
-  adjective: Australian
+  name: Catalonia
+  adjective: Catalan
 
 # Optionally uncomment and update the settings below to control the frontpage heading and instructions.
 #frontpage_heading: Australian data for Sustainable Development Goal indicators
