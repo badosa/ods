@@ -103,6 +103,8 @@ non_global_metadata: indicator.national_metadata
 
 # The list of languages that are translated. The first one is the default.
 languages:
+  - ca
+  - es
   - en
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
