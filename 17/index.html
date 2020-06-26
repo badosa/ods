@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://badosa.github.io/ods-data/en',
+  remoteDataBaseUrl: 'https://badosa.github.io/ods-data/ca',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -26,7 +26,7 @@ var opensdg = {
     return value;
   },
 
-  language: 'en',
+  language: 'ca',
 };
 
 // For backwards compatibility, some of these might need to be global.
@@ -92,7 +92,7 @@ var translations = {
 
         <title>
           
-            Goal 17 - Partnerships for the goals
+            Meta 17 - Alianzas para Lograr los Objetivos
           
         </title>
 
@@ -122,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/ods/assets/css/style.css?v=20200626203157">
+        <link rel="stylesheet" href="/ods/assets/css/style.css?v=20200626205833">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,18 +133,18 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-en layout-goal">
+<body class="language-ca layout-goal-by-target">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Alfa","default_contrast":"contrast estándar","disable_high_contrast":"Desactivar alt contraste","disclaimer":"Aquest és un lloc web de desenvolupament. Agraïm els vostres comentaris.","enable_high_contrast":"Activar alt contrast","high_contrast":"alt contrast","skip_link":"Saltar al contingut principal","tag_line":"17 fites per transformar el nostre món"};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Saltar al contingut principal</a>
 <div id="disclaimer">
   <div class="container">
   <div class="disclaimer-alert" role="alert">
-    <strong class="phase-tag">Alpha</strong>
+    <strong class="phase-tag">Alfa</strong>
     
-    This is a development website. We welcome your <a href="mailto:test@example.com">feedback</a>.
+    Aquest és un lloc web de desenvolupament. Agraïm els vostres comentaris.
   </div>
 </div>
 
@@ -154,11 +154,21 @@ var translations = {
   <div class="container">
 
     <a class="navbar-brand" href="/ods/" id="home">
-      <img src="/ods/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      <img src="/ods/assets/img/SDG_logo.png" alt="Objetivos de Desarrollo Sostenible - 17 fites per transformar el nostre món" />
     </a>
 
   <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Català</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+
+<ul class="language-options language-toggle"><li><a href="/ods/es/17/">Español</a></li><li><a href="/ods/en/17/">English</a></li></ul>
+
+    </div></div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
@@ -168,32 +178,34 @@ var translations = {
             aria-haspopup="true"
             aria-expanded="false">
           <span data-target="menu" tabindex="0"
-          role="navigation">Menu</span>
+          role="navigation">Menú</span>
         </li>
-        <li><span data-target="search">Search</span></li>
+        <li><span data-target="search">Buscar</span></li>
       </ul>
 
       <div id="search" class="menu-target">
   <form action="/ods/search">
-    <input name="q" id="indicator_search" title="Search" />
+    <input name="q" id="indicator_search" title="Buscar" />
     <label for="indicator_search">
-      <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Search:</span>
+      <button aria-label="Buscar" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Buscar:</span>
     </label>
   </form>
 </div>
 
       
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-            <a href="/ods/reporting-status">Reporting Status</a>
-          </li><li class="nav-link ">
-            <a href="/ods/about">About</a>
-          </li><li class="nav-link ">
-            <a href="/ods/guidance">Guidance</a>
-          </li><li class="nav-link ">
-            <a href="/ods/faq">FAQ</a>
-          </li><li class="nav-link ">
-            <a href="/ods/news">Updates</a>
-          </li></ul>
+            <a href="/ods/reporting-status">Estado de informes</a>
+          </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Català</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+
+<ul class="language-options language-toggle"><li><a href="/ods/es/17/">Español</a></li><li><a href="/ods/en/17/">English</a></li></ul>
+
+        </li></ul>
 
       
 
@@ -207,657 +219,840 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/17.png" alt="Partnerships for the goals - Goal 17" />
+        <img src="https://badosa.github.io/sdg-translations/assets/img/goals/ca/17.png" alt="Alianzas para Lograr los Objetivos - Meta 17" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
-          <span class="hidden-sm hidden-md hidden-lg">Goal 17: </span>Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development
+          <span class="hidden-sm hidden-md hidden-lg">Meta 17: </span>Fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible
         </h1>
       </div>
     </div>
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-17">
+<div id="main-content" class="container goal-indicators goal-17 goal-by-target">
 
   
 
   <ol class="breadcrumb">
-    <li><a href="/ods/">Home</a></li>
-    <li class="active">Goal 17</li>
+    <li><a href="/ods/">Inicio</a></li>
+    <li class="active">Meta 17</li>
   </ol>
 
+  <div class="visible-md-block visible-lg-block">
+    <div class="col-md-6">
+      <h2>Objetivos</h2>
+    </div>
+    <div class="col-md-6">
+      <h2>Indicadores</h2>
+    </div>
+  </div>
+
   
   
-
     
-      
-      
-      
-      
-    
-    
-    
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-1-1">
-            <span>
-              17.1.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Total government revenue as a proportion of GDP, by source
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-1-2">
-            <span>
-              17.1.2
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Proportion of domestic budget funded by domestic taxes
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-2-1">
-            <span>
-              17.2.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-3-1">
-            <span>
-              17.3.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Foreign direct investment (FDI), official development assistance and South-South cooperation as a proportion of total domestic budget
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.1
+      </span>
+      Fortalecer la movilización de recursos internos, incluso mediante la prestación de apoyo internacional a los países en desarrollo, con el fin de mejorar la capacidad nacional para recaudar ingresos fiscales y de otra índole
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-3-2">
-            <span>
-              17.3.2
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      <div class="col-md-12 ">
+        <a href="/ods/17-1-1">
+          <span>
+            17.1.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Volume of remittances (in United States dollars) as a proportion of total GDP
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Total de ingresos del gobierno en proporción al PIB, desglosado por fuente
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-4-1">
-            <span>
-              17.4.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-1-2">
+          <span>
+            17.1.2
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Debt service as a proportion of exports of goods and services
-            
-          </a>
-        </div>
+          </span>
+          Proporción del presupuesto nacional financiado por impuestos internos
+          
+        </a>
+      </div>
     
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-5-1">
-            <span>
-              17.5.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Number of countries that adopt and implement investment promotion regimes for least developed countries
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-6-1">
-            <span>
-              17.6.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Number of science and/or technology cooperation agreements and programmes between countries, by type of cooperation
-            
-          </a>
-        </div>
     </div>
+  
     
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-6-2">
-            <span>
-              17.6.2
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Fixed Internet broadband subscriptions per 100 inhabitants, by speed
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-7-1">
-            <span>
-              17.7.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Total amount of approved funding for developing countries to promote the development, transfer, dissemination and diffusion of environmentally sound technologies
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-8-1">
-            <span>
-              17.8.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Proportion of individuals using the Internet
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-9-1">
-            <span>
-              17.9.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Dollar value of financial and technical assistance (including through North-South, South‐South and triangular cooperation) committed to developing countries
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.2
+      </span>
+      Velar por que los países desarrollados cumplan plenamente sus compromisos en relación con la asistencia oficial para el desarrollo, incluido el compromiso de numerosos países desarrollados de alcanzar el objetivo de destinar el 0,7% del ingreso nacional bruto a la asistencia oficial para el desarrollo de los países en desarrollo y entre el 0,15% y el 0,20% del ingreso nacional bruto a la asistencia oficial para el desarrollo de los países menos adelantados; se alienta a los proveedores de asistencia oficial para el desarrollo a que consideren la posibilidad de fijar una meta para destinar al menos el 0,20% del ingreso nacional bruto a la asistencia oficial para el desarrollo de los países menos adelantados
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-10-1">
-            <span>
-              17.10.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      <div class="col-md-12 ">
+        <a href="/ods/17-2-1">
+          <span>
+            17.2.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Worldwide weighted tariff-average
-            
-          </a>
-        </div>
+          </span>
+          Asistencia oficial para el desarrollo neta, total y para los países menos adelantados en proporción al ingreso nacional bruto (INB) de los donantes del Comité de Asistencia para el Desarrollo de la Organización de Cooperación y Desarrollo Económicos (OCDE)
+          
+        </a>
+      </div>
     
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-11-1">
-            <span>
-              17.11.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Developing countries’ and least developed countries’ share of global exports
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-12-1">
-            <span>
-              17.12.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Average tariffs faced by developing countries, least developed countries and small island developing States
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-13-1">
-            <span>
-              17.13.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Macroeconomic Dashboard
-            
-          </a>
-        </div>
     </div>
+  
     
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-14-1">
-            <span>
-              17.14.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Number of countries with mechanisms in place to enhance policy coherence of sustainable development
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-15-1">
-            <span>
-              17.15.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Extent of use of country-owned results frameworks and planning tools by providers of development cooperation
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-16-1">
-            <span>
-              17.16.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Number of countries reporting progress in multi-stakeholder development effectiveness monitoring frameworks that support the achievement of the sustainable development goals
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-17-1">
-            <span>
-              17.17.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Amount of United States dollars committed to public-private and civil society partnerships
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.3
+      </span>
+      Movilizar recursos financieros adicionales de múltiples fuentes para los países en desarrollo
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-18-1">
-            <span>
-              17.18.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      <div class="col-md-12 ">
+        <a href="/ods/17-3-1">
+          <span>
+            17.3.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Proportion of sustainable development indicators produced at the national level with full disaggregation when relevant to the target, in accordance with the Fundamental Principles of Official Statistics
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Inversión extranjera directa, asistencia oficial para el desarrollo y cooperación Sur-Sur en proporción al presupuesto nacional total
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-18-2">
-            <span>
-              17.18.2
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-3-2">
+          <span>
+            17.3.2
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official Statistics
-            
-          </a>
-        </div>
+          </span>
+          Volumen de remesas (en dólares de los Estados Unidos) en proporción al PIB total
+          
+        </a>
+      </div>
     
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-18-3">
-            <span>
-              17.18.3
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Number of countries with a national statistical plan that is fully funded and under implementation, by source of funding
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-19-1">
-            <span>
-              17.19.1
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
-            </span>
-            Dollar value of all resources made available to strengthen statistical capacity in developing countries
-            
-          </a>
-        </div>
     </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.4
+      </span>
+      Ayudar a los países en desarrollo a lograr la sostenibilidad de la deuda a largo plazo con políticas coordinadas orientadas a fomentar la financiación, el alivio y la reestructuración de la deuda, según proceda, y hacer frente a la deuda externa de los países pobres muy endeudados a fin de reducir el endeudamiento excesivo
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/ods/17-19-2">
-            <span>
-              17.19.2
-              <span class="status notstarted">
-                Exploring data sources
-              </span>
+      <div class="col-md-12 ">
+        <a href="/ods/17-4-1">
+          <span>
+            17.4.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
             </span>
-            Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration
-            
-          </a>
-        </div>
+          </span>
+          Servicio de la deuda en proporción a las exportaciones de bienes y servicios
+          
+        </a>
+      </div>
     
+    </div>
+  
     
-	 	
-		
-			</div>
-		
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.5
+      </span>
+      Adoptar y aplicar sistemas de promoción de las inversiones en favor de los países menos adelantados
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-5-1">
+          <span>
+            17.5.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de países que adoptan y aplican sistemas de promoción de las inversiones en favor de los países menos adelantados
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.6
+      </span>
+      Mejorar la cooperación regional e internacional Norte-Sur, Sur-Sur y triangular en materia de ciencia, tecnología e innovación y el acceso a estas, y aumentar el intercambio de conocimientos en condiciones mutuamente convenidas, incluso mejorando la coordinación entre los mecanismos existentes, en particular a nivel de las Naciones Unidas, y mediante un mecanismo mundial de facilitación de la tecnología
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-6-1">
+          <span>
+            17.6.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de acuerdos y programas de cooperación en materia de ciencia o tecnología suscritos por los países, desglosado por tipo de cooperación
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-6-2">
+          <span>
+            17.6.2
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de abonados a Internet de banda ancha fija por cada 100 habitantes, desglosado por velocidad
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.7
+      </span>
+      Promover el desarrollo de tecnologías ecológicamente racionales y su transferencia, divulgación y difusión a los países en desarrollo en condiciones favorables, incluso en condiciones concesionarias y preferenciales, según lo convenido de mutuo acuerdo
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-7-1">
+          <span>
+            17.7.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Total de los fondos aprobados para los países en desarrollo a fin de promover el desarrollo, la transferencia y la difusión de tecnologías ecológicamente racionales
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.8
+      </span>
+      Poner en pleno funcionamiento, a más tardar en 2017, el banco de tecnología y el mecanismo de apoyo a la creación de capacidad en materia de ciencia, tecnología e innovación para los países menos adelantados y aumentar la utilización de tecnologías instrumentales, en particular la tecnología de la información y las comunicaciones
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-8-1">
+          <span>
+            17.8.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Proporción de personas que utilizan Internet
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.9
+      </span>
+      Aumentar el apoyo internacional para realizar actividades de creación de capacidad eficaces y específicas en los países en desarrollo a fin de respaldar los planes nacionales de implementación de todos los Objetivos de Desarrollo Sostenible, incluso mediante la cooperación Norte-Sur, Sur-Sur y triangular
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-9-1">
+          <span>
+            17.9.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Valor en dólares de la asistencia financiera y técnica (incluso mediante la cooperación Norte-Sur, Sur‐Sur y triangular) prometida a los países en desarrollo
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.10
+      </span>
+      Promover un sistema de comercio multilateral universal, basado en normas, abierto, no discriminatorio y equitativo en el marco de la Organización Mundial del Comercio, incluso mediante la conclusión de las negociaciones en el marco del Programa de Doha para el Desarrollo
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-10-1">
+          <span>
+            17.10.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Promedio arancelario mundial ponderado
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.11
+      </span>
+      Aumentar significativamente las exportaciones de los países en desarrollo, en particular con miras a duplicar la participación de los países menos adelantados en las exportaciones mundiales de aquí a 2020
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-11-1">
+          <span>
+            17.11.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Participación de los países en desarrollo y los países menos adelantados en las exportaciones mundiales
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.12
+      </span>
+      Lograr la consecución oportuna del acceso a los mercados libre de derechos y contingentes de manera duradera para todos los países menos adelantados, conforme a las decisiones de la Organización Mundial del Comercio, incluso velando por que las normas de origen preferenciales aplicables a las importaciones de los países menos adelantados sean transparentes y sencillas y contribuyan a facilitar el acceso a los mercados
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-12-1">
+          <span>
+            17.12.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Promedio de los aranceles que enfrentan los países en desarrollo, los países menos adelantados y los pequeños Estados insulares en desarrollo
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.13
+      </span>
+      Aumentar la estabilidad macroeconómica mundial, incluso mediante la coordinación y coherencia de las políticas
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-13-1">
+          <span>
+            17.13.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Tablero macroeconómico
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.14
+      </span>
+      Mejorar la coherencia de las políticas para el desarrollo sostenible
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-14-1">
+          <span>
+            17.14.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de países que cuentan con mecanismos para mejorar la coherencia de las políticas de desarrollo sostenible
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.15
+      </span>
+      Respetar el margen normativo y el liderazgo de cada país para establecer y aplicar políticas de erradicación de la pobreza y desarrollo sostenible
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-15-1">
+          <span>
+            17.15.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Grado de utilización de los marcos de resultados y las herramientas de planificación de los propios países por los proveedores de cooperación para el desarrollo
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.16
+      </span>
+      Mejorar la Alianza Mundial para el Desarrollo Sostenible, complementada por alianzas entre múltiples interesados que movilicen e intercambien conocimientos, especialización, tecnología y recursos financieros, a fin de apoyar el logro de los Objetivos de Desarrollo Sostenible en todos los países, particularmente los países en desarrollo
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-16-1">
+          <span>
+            17.16.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de países que informan de sus progresos en los marcos de múltiples interesados para el seguimiento de la eficacia de las actividades de desarrollo que apoyan el logro de los Objetivos de Desarrollo Sostenible
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.17
+      </span>
+      Fomentar y promover la constitución de alianzas eficaces en las esferas pública, público-privada y de la sociedad civil, aprovechando la experiencia y las estrategias de obtención de recursos de las alianzas
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-17-1">
+          <span>
+            17.17.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Suma en dólares de los Estados Unidos prometida a las: a) alianzas público-privadas y b) alianzas con la sociedad civil
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.18
+      </span>
+      De aquí a 2020, mejorar el apoyo a la creación de capacidad prestado a los países en desarrollo, incluidos los países menos adelantados y los pequeños Estados insulares en desarrollo, para aumentar significativamente la disponibilidad de datos oportunos, fiables y de gran calidad desglosados por ingresos, sexo, edad, raza, origen étnico, estatus migratorio, discapacidad, ubicación geográfica y otras características pertinentes en los contextos nacionales
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-18-1">
+          <span>
+            17.18.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Proporción de indicadores de desarrollo sostenible producidos a nivel nacional, con pleno desglose cuando sea pertinente para la meta, de conformidad con los Principios Fundamentales de las Estadísticas Oficiales
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-18-2">
+          <span>
+            17.18.2
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de países cuya legislación nacional sobre estadísticas cumple los Principios Fundamentales de las Estadísticas Oficiales
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-18-3">
+          <span>
+            17.18.3
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Número de países que cuentan con un plan estadístico nacional plenamente financiado y en proceso de aplicación, desglosado por fuente de financiación
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Objetivo</label>
+        17.19
+      </span>
+      De aquí a 2030, aprovechar las iniciativas existentes para elaborar indicadores que permitan medir los progresos en materia de desarrollo sostenible y complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-19-1">
+          <span>
+            17.19.1
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Valor en dólares de todos los recursos proporcionados para fortalecer la capacidad estadística de los países en desarrollo
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/ods/17-19-2">
+          <span>
+            17.19.2
+            <span class="status notstarted">
+              Explorando fuentes de datos
+            </span>
+          </span>
+          Proporción de países que a) han realizado al menos un censo de población y vivienda en los últimos diez años; y b) han registrado el 100% de los nacimientos y el 80% de las defunciones
+          
+        </a>
+      </div>
+    
+    </div>
+  
 </div>
 
 <footer role="contentinfo">
@@ -866,29 +1061,12 @@ var translations = {
       <div class="col-xs-12">
         <div id="footerLinks">
           <ul>
-            <li><a href="https://open-sdg.org">Built using Open SDG</a></li>
+            <li><a href="https://open-sdg.readthedocs.io/en/latest/">Construido usando Open SDG</a></li>
             
               
                 <li>
                 
-                  <a href="mailto:my-email-address@example.com" target="_blank">Contact us</a>
-                
-                </li>
-              
-                <li>
-                
-                  <a href="https://twitter.com/MyTwitterAccount" target="_blank">Twitter</a>
-                
-                </li>
-              
-                <li>
-                
-                  <a href="https://facebook.com/MyFacebookAccount" target="_blank">Facebook</a>
-                
-                </li>
-              
-                <li>
-                <a href="/ods/about/cookies-and-privacy/">Cookies</a>
+                  <a href="mailto:my-email-address@example.com" target="_blank">Contáctenos</a>
                 
                 </li>
               
@@ -918,7 +1096,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/ods/assets/js/sdg.js?v=20200626203157'></script><script>
+<script src='/ods/assets/js/sdg.js?v=20200626205833'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
