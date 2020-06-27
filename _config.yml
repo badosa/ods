@@ -35,7 +35,7 @@ analytics:
   ga_prod: ''
 
 # Sticky share buttons (facebook, twitter and email)
-#sharethis_property: '5d279253faeee40012f195e1'
+# sharethis_property: '5d279253faeee40012f195e1'
 
 # Replace the email addresses below.
 email_contacts:
