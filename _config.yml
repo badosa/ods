@@ -90,8 +90,8 @@ menu:
 footer_menu:
   - path: https://www.idescat.cat/serveis/suggeriments/
     translation_key: menu.contact_us
-#  - path: https://twitter.com/MyTwitterAccount
-#    translation_key: general.twitter
+  - path: https://twitter.com/idescat
+    translation_key: general.twitter
 #  - path: https://facebook.com/MyFacebookAccount
 #    translation_key: general.facebook
 #  - path: /about/cookies-and-privacy/
